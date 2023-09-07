@@ -1,0 +1,30 @@
+.sidebar{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 2px solid blue;
+    background-color: white;
+    width: 10%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px blueviolet;
+    
+
+}
+.compose{
+    display: flex;
+    margin: 20px;
+}
+.compose button{
+
+padding: 1rem;
+border-radius: 10px;
+margin-bottom: 10px;
+width: 10rem;
+font-weight: bolder;
+border: 3px solid darkslateblue;
+background-color: white;
+}

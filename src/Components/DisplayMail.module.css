@@ -1,0 +1,51 @@
+.display{
+    text-align: left;
+    border: 1px solid gray;
+    max-height: 80px;
+    margin-left: 18%;
+    margin-right: 8%
+}
+.subject, .text{
+ font-family: 'Times New Roman', Times, serif;
+ margin: 3rem;
+
+}
+.to{
+    font-weight: bold;
+    margin: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.display button{
+    font-weight: bold;
+    font-size: medium;
+    border: 3px solid red;
+    border-radius: 10px;
+    margin-top:0.5rem;
+    margin-left: 1rem
+}
+.display button:hover{
+    background-color: lightcoral;
+}
+.heading{
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 3px solid purple;
+    text-shadow:1px 2px  pink;
+    font-size: larger;
+    margin-left: 0;
+}
+li{
+    list-style: none;
+    width: 100%;
+}
+.seen button{
+background-color: blue;
+border: 3px solid blue;
+border-radius: 80px;
+padding: 0.2rem;
+margin: 0.5rem;
+}
+.seen button:hover{
+    background-color: white;
+}

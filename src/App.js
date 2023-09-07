@@ -1,24 +1,43 @@
-import logo from './logo.svg';
 import './App.css';
+import AuthForm from './Pages/AuthForm';
+import HomePage from './Pages/HomePage';
+import {Redirect,Switch,Route} from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import ComposeMail from './Pages/ComposeMail';
+import GetMail from './Components/GetMail';
+import InboxMail from './Components/InboxMail';
+import SingleMsg from './SideBar/SingleMsg';
 
 function App() {
+  const isLoggedIn=useSelector(state=>state.auth.isLoggedIn)
+  console.log("isLoggedin",isLoggedIn)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+
+      <Route path="/authform">
+        <AuthForm/>
+        </Route>
+        {isLoggedIn && <Route path="/homepage" exact>
+          <HomePage/>
+        </Route>}
+         <Route path="/composemail">
+          <ComposeMail/>
+        </Route>
+        <Route path="/displaymail" >
+          <GetMail/>
+        </Route>
+        <Route path="/inboxdisplay" exact>
+          <InboxMail/>
+             </Route>
+        <Route path="/singlemsg">
+          <SingleMsg/>
+        </Route>
+        <Route path="*">
+          <Redirect to="/authform">
+            <AuthForm />
+          </Redirect>
+          </Route>
+    </Switch>
   );
 }
 
