@@ -1,28 +1,30 @@
 .display{
-    text-align: left;
-    border: 1px solid gray;
-    max-height: 80px;
-    margin-left: 18%;
-    margin-right: 8%
+    display: flex;
+    margin-left: 20%;
+    border: 0.2px solid black;
+    justify-content: left;
+    width: 70rem;
+    height: 5rem;
+    border-radius: 5px;
+    padding: 0.2px;
 }
-.subject, .text{
+.subject, .text, .from{
  font-family: 'Times New Roman', Times, serif;
  margin: 3rem;
-
-}
-.to{
-    font-weight: bold;
-    margin: 3rem;
-    font-family: 'Times New Roman', Times, serif;
+ padding: 1px;
+ margin-top: 1.5rem;
 }
 
 .display button{
+    display: flex;
     font-weight: bold;
     font-size: medium;
     border: 3px solid red;
     border-radius: 10px;
-    margin-top:0.5rem;
-    margin-left: 1rem
+    background-color: white;
+    width: max-content;
+    height: max-content;
+    margin-top: 1.5rem;
 }
 .display button:hover{
     background-color: lightcoral;
@@ -30,21 +32,24 @@
 .heading{
     text-align: center;
     font-weight: bold;
-    border-bottom: 3px solid purple;
+    border-bottom: 3px solid dodgerblue;
+    border-top: 3px solid dodgerblue;
     text-shadow:1px 2px  pink;
     font-size: larger;
     margin-left: 0;
+    margin-bottom: 1rem;
 }
 li{
     list-style: none;
-    width: 100%;
 }
 .seen button{
 background-color: blue;
 border: 3px solid blue;
 border-radius: 80px;
 padding: 0.2rem;
-margin: 0.5rem;
+margin-top: 1rem;
+margin-left: 1rem;
+
 }
 .seen button:hover{
     background-color: white;

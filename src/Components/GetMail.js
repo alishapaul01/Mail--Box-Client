@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { mailAction } from "../Store/MailSlice";
-import DisplayMail from "./DisplayMail";
+import SentMail from './SentMail'
 
 const GetMail = () => {
   const [mail, setMail] = useState([]);
@@ -39,7 +39,7 @@ const GetMail = () => {
 
   return (
     <div>
-      <DisplayMail data={mail} />
+      <SentMail data={mail} />
     </div>
   );
 };

@@ -1,28 +1,10 @@
-.header{
+.heading{
    font-family: 'Times New Roman', Times, serif;
    padding: 1.5rem;
-   border-bottom: 3px solid palevioletred;
-   font-size: xx-large;
+   font-size: larger;
    text-align: center;
-   margin-left: 0;
+   margin-left: 15rem;
    font-style: italic;
-}
-.header button{
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    border: 3px solid blue;
-    margin-left: 5rem;
-    width: 10%;
-    border-radius: 10px;
-    background-color: white;
-
-}
-.header button:hover{
-    border: 3px solid purple;
-    background-color: plum;
-}
-.heading{
-text-decoration: underline;
-font-style: normal;
-
+   font-weight: bold;
+   
 }

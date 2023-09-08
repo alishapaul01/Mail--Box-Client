@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./Header/Header";
 import Sidebar from "../SideBar/SideBar";
-import classes from './DisplayMail.module.css'
+import classes from './SentMail.module.css'
 import { useSelector } from "react-redux";
 import { Container} from "react-bootstrap";
 import  Alert from "react-bootstrap/Alert";
@@ -31,10 +31,11 @@ const DisplayMail = (props) => {
   }
   else{
   display = props.data.map((item) => (
-    <Container>
+   
     <ul>
-        
-          <li key={item.id}>
+         <Container fluid>
+          <li 
+          key={item.id}>
           <div className={classes.display}>
           <span className={classes.to}>To:- {item.mail}@gmail.com</span>
           <span className={classes.subject}>{item.subject}</span>
@@ -42,9 +43,9 @@ const DisplayMail = (props) => {
           <button onClick={deleteHandler.bind(null,item.id)}>Delete</button>
           </div>   
     </li>
-   
+   </Container>
   </ul>
-  </Container>
+
 ));
 }
 

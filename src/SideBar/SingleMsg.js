@@ -7,7 +7,7 @@ const SingleMsg = (props) => {
   return (
     <div>
 <Header/>
-<Sidebar/>
+<Sidebar items={props}/>
     </div>
   )
 }

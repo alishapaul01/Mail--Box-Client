@@ -1,0 +1,47 @@
+.display{
+    display: flex;
+    margin-left: 20%;
+    border: 0.2px solid black;
+    justify-content: left;
+    width: 70rem;
+    height: 5rem;
+    border-radius: 5px;
+}
+.subject, .text, .to{
+ font-family: 'Times New Roman', Times, serif;
+ margin: 3rem;
+ margin-top: 2rem;
+
+}
+
+.display button{
+    font-weight: bold;
+    font-size: medium;
+    border: 3px solid red;
+    border-radius: 10px;
+    margin-bottom: 0.5rem; 
+    width: max-content;
+    height: max-content;
+    background-color: white;
+    margin-top: 2rem;
+    margin-left: 10rem;
+}
+.display button:hover{
+    background-color: lightcoral;
+}
+.heading{
+    text-align: center;
+    font-weight: bold;
+    
+    border-bottom: 3px solid purple;
+    border-top: 3px solid purple;
+    text-shadow:1px 2px  pink;
+    font-size: larger;
+    margin-left: 0;
+    margin-bottom: 2rem;
+}
+li{
+    list-style: none;
+   
+}
+
