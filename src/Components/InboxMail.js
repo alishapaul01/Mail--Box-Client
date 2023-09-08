@@ -9,18 +9,21 @@ const InboxMail = () => {
   const [inbox, setInbox] = useState([]);
   const loggedInEmail = useSelector((state) => state.auth.email);
   const updatedLoggedInEmail = loggedInEmail;
+
   useEffect(() => {
+    setInterval(()=>{
     getMail()
-  }, []);
+    console.log('called data')
+  },2000)
+  // eslint-disable-next-line 
+}, []);
   const getMail = async () => {
     try {
       const response = await fetch(
         `https://mail-box-3d7e2-default-rtdb.firebaseio.com/mail/${updatedLoggedInEmail}Inbox.json`
       );
-     // console.log(response);
       const data = await response.json();
       dispatch(inboxActions.onEmailFetch(data));
-      //console.log(data);
         const array = [];
         
         for (const key in data) {
@@ -33,12 +36,11 @@ const InboxMail = () => {
           });
         }
         setInbox(array);
-      
-    } catch (err) {
+      }
+      catch(err){
       alert(err);
     }
   };
-
   return (
     <div>
       <InboxDisplay data={inbox} />
