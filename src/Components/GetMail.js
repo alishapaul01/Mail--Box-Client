@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { mailAction } from "../Store/MailSlice";
 import SentMail from './SentMail'
+import {sentActions} from '../Store/sentSlice'
 
 const GetMail = () => {
   const [mail, setMail] = useState([]);
@@ -21,6 +22,8 @@ const GetMail = () => {
       console.log("dataa", data);
 
       dispatch(mailAction.addedMail(data));
+      dispatch(sentActions.onEmailSent(data))
+
       const array = [];
       for (const key in data) {
         array.push({

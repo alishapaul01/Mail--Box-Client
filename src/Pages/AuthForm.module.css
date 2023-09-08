@@ -3,11 +3,11 @@
   width: 100%;
   max-width: 30rem;
   border-radius: 6px;
-  background-color: transparent;
+  background-color: white;
   border: 2px solid darkblue;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  padding: 2rem;
+  padding: 3rem;
   text-align: center;
+  box-shadow: 1px 2px 2px 2px purple;
 }
 .control {
   margin-bottom: 0.5rem;
@@ -44,9 +44,9 @@
   font-weight: bolder;
   border: 3px solid blue;
   margin: 1rem;
-  width: 150px;
-  border-radius: 0px;
-  height: 30px;
+  width: max-content;
+  border-radius: 6px;
+  height: max-content;
   background-color: white;
 }
 .actions button:hover {

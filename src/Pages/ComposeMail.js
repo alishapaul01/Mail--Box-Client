@@ -6,7 +6,7 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { useHistory } from "react-router-dom";
 import BackButton from "../Components/Header/BackButton";
 import { mailAction } from "../Store/MailSlice";
-import classes from './ComposeMail.module.css'
+import classes from './ComposeMail.module.css';
 
 const ComposeMail = () => {
   const history = useHistory();

@@ -1,10 +1,11 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector , useDispatch} from "react-redux";
 import InboxDisplay from "./InboxDisplay";
-
+import{inboxActions} from '../Store/inboxSlice';
 const InboxMail = () => {
+  const dispatch= useDispatch();
   const [inbox, setInbox] = useState([]);
   const loggedInEmail = useSelector((state) => state.auth.email);
   const updatedLoggedInEmail = loggedInEmail;
@@ -18,6 +19,7 @@ const InboxMail = () => {
       );
      // console.log(response);
       const data = await response.json();
+      dispatch(inboxActions.onEmailFetch(data));
       //console.log(data);
         const array = [];
         
@@ -31,7 +33,6 @@ const InboxMail = () => {
           });
         }
         setInbox(array);
-       // console.log(array);
       
     } catch (err) {
       alert(err);

@@ -1,12 +1,12 @@
-import React from "react";
+import {useEffect, useState} from "react";
 import classes from "./SideBar.module.css";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Button} from "react-bootstrap";
+const Sidebar = ( ) => {
 
-const Sidebar = (props) => {
-  const inboxItems= useSelector(state=> state.inbox.emails)
-
+  const emails= useSelector(state=> state.inbox)
+  const [unreadcount,setUnreadCount]=useState(0)
   const history = useHistory();
 
   const composeMailHandler = () => {
@@ -18,11 +18,18 @@ const Sidebar = (props) => {
   const inboxHandler=()=>{
     history.push("/inboxdisplay")
   }
-
-  let totalUnread = 0;
-  inboxItems.map((item)=>
-  item.seen? totalUnread++ : ''
-  )
+useEffect(()=>{
+if(emails){
+  let count=0;
+  Object.keys(emails.emails).map((email) => {
+    if (emails.emails[email].seen === false) {
+      count = count + 1;
+      setUnreadCount(count)
+    }
+    
+  })
+}
+},[emails])
 
   
   const logoutHandler=()=>{
@@ -39,7 +46,8 @@ const Sidebar = (props) => {
         </div>
         <div className={classes.compose}> 
         <Button onClick={inboxHandler}>
-        Inbox {totalUnread}
+        Inbox <br/>
+        ({unreadcount} unread)
         </Button>
         </div>
         <div className={classes.compose}> 

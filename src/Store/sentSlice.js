@@ -8,7 +8,7 @@ const sentSlice = createSlice({
   initialState: initialSentState,
   reducers: {
     onEmailSent(state, action) {
-      state.email = action.payload.split('@')[0];
+      state.email = action.payload
     },
   },
 });

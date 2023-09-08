@@ -4,7 +4,6 @@ import Sidebar from "../SideBar/SideBar";
 import classes from './SentMail.module.css'
 import { useSelector } from "react-redux";
 import { Container} from "react-bootstrap";
-import  Alert from "react-bootstrap/Alert";
 const DisplayMail = (props) => {
 
 
@@ -18,9 +17,8 @@ const DisplayMail = (props) => {
     method:'DELETE'
    })
    if(response.status===200){
-    <Alert variant='success'>
-   <p>Deleted successfully</p>
-  </Alert>
+   alert('Deleted')
+
     window.location.reload()
    }
 
