@@ -18,8 +18,6 @@ const DisplayMail = (props) => {
    })
    if(response.status===200){
    alert('Deleted')
-
-    window.location.reload()
    }
 
   }

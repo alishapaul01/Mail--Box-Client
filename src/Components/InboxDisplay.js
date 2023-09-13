@@ -20,7 +20,7 @@ const InboxDisplay = (props) => {
       const result = inboxData.filter((item) => item.id !== id);
       setInboxData(result);
       alert("Sucessfully deleted");
-      window.location.reload()
+      // window.location.reload()
 
     } catch (err) {
       console.log(err);
@@ -36,7 +36,6 @@ const InboxDisplay = (props) => {
     )
 
     alert('Seen Successfully');
-    window.location.reload();
     setSeen(true);
     
   };

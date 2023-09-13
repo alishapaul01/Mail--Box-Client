@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useSelector , useDispatch} from "react-redux";
 import InboxDisplay from "./InboxDisplay";
 import{inboxActions} from '../Store/inboxSlice';
+
 const InboxMail = () => {
   const dispatch= useDispatch();
   const [inbox, setInbox] = useState([]);
@@ -11,12 +12,17 @@ const InboxMail = () => {
   const updatedLoggedInEmail = loggedInEmail;
 
   useEffect(() => {
-    setInterval(()=>{
-    getMail()
-    console.log('called data')
-  },2000)
-  // eslint-disable-next-line 
-}, []);
+    const interval=  setInterval(() => {
+      console.log("setintervelid", interval);
+      getMail()
+  }, 2000);
+
+    return () => {
+      console.log("clearintervalid", interval);
+      clearInterval(interval);
+    };
+  });
+
   const getMail = async () => {
     try {
       const response = await fetch(

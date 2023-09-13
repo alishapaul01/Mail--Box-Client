@@ -11,8 +11,16 @@ const GetMail = () => {
   const updatedLoggedInEmail = loggedInEmail
 
   useEffect(() => {
-    displaymail();
-  }, []);
+    const interval=  setInterval(() => {
+      console.log("setintervelid", interval);
+      displaymail()
+  }, 2000);
+
+    return () => {
+      console.log("clearintervalid", interval);
+      clearInterval(interval);
+    };
+  });
   const displaymail = async () => {
     try {
       const response = await fetch(
